@@ -6,7 +6,6 @@ import { MdAssistantDirection } from "react-icons/md";
 import { CiBookmarkPlus } from "react-icons/ci";
 import { FaDirections } from "react-icons/fa";
 
-
 import "./resto.css";
 import { Footer } from "../Footer/Footer";
 
@@ -20,9 +19,9 @@ export default function RestoDetailsPage(props) {
   };
 
   const fetchDetails = () => {
-    const restaurantDetails = JsonFile.restaurants.filter((restaurant) => {
-      return restaurant.id === id;
-    });
+    const restaurantDetails = JsonFile.restaurants.filter(
+      (restaurant) => restaurant.id === id
+    );
     console.log("data", restaurantDetails);
     if (restaurantDetails.length > 0) {
       setDetails(restaurantDetails[0]);
@@ -31,21 +30,22 @@ export default function RestoDetailsPage(props) {
       console.log("something went wrong", Error);
     }
   };
+
   useEffect(() => {
     fetchDetails();
-  }, []);
+    // Add id to dependency array to avoid missing dependency warning
+  }, [id]);
 
   return (
     <>
-      <div className="container w-100  d-flex justify-content-center align-items-center container-fluid">
-        <div className="row w-75" >
+      <div className="container w-100 d-flex justify-content-center align-items-center container-fluid">
+        <div className="row w-75">
           <span className="text-center">
             <GiJewelCrown style={{ fontSize: "75px" }} />
           </span>
           <h1 className="text-center">{details.name}</h1>
-          <div className="col-sm-8 container-fluid" >
+          <div className="col-sm-8 container-fluid">
             <img
-              // style={{ maxHeight: "500px" }}
               src={details.img}
               alt="photo0"
               className="border border-4 rounded rounded-3 imgScale"
@@ -60,25 +60,25 @@ export default function RestoDetailsPage(props) {
             <img
               src={details.img}
               alt="photo2"
-              className="border border-4 rounded rounded-circle w-75  ms-5 object-fit-cover img3 "
+              className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3 "
             />
             <img
               src={details.img}
               alt="photo3"
-              className="border border-4 rounded rounded-circle w-75  ms-5 object-fit-cover img3"
+              className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3"
             />
           </div>
-          <div className="w-75 d-flex ">
+          <div className="w-75 d-flex">
             <div>
               <p className="text-start">{details.cuisines}</p>
             </div>
             <div className="w-100">
               <p className="text-end me-5 mt-1">
                 <span
-                  className="border border-1 p-1 mt-1 rounded-2 "
+                  className="border border-1 p-1 mt-1 rounded-2"
                   style={{
                     height: "30px",
-                    width:"60px",
+                    width: "60px",
                     background: "green",
                     color: "white",
                   }}
@@ -95,7 +95,10 @@ export default function RestoDetailsPage(props) {
 
           <div className="d-flex">
             <p>
-            <button className="btn btn-outline-dark"> <MdAssistantDirection/>Direction</button>
+              <button className="btn btn-outline-dark">
+                <MdAssistantDirection />
+                Direction
+              </button>
             </p>
             <p>
               <button
@@ -109,12 +112,15 @@ export default function RestoDetailsPage(props) {
               </button>
             </p>
             <p>
-              <button className="btn btn-outline-dark ms-2 bi"><FaDirections />Share</button>
+              <button className="btn btn-outline-dark ms-2">
+                <FaDirections />
+                Share
+              </button>
             </p>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

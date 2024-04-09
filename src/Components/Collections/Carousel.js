@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
-export default function Carousel({hideCarousel}) {
+export default function Carousel({ hideCarousel }) {
   let imgArr = [
     "https://b.zmtcdn.com/data/pictures/2/18807262/0a30fc154518b81c125b6d68362fd6ce_featured_v2.jpg",
     "https://b.zmtcdn.com/data/pictures/1/18375831/8fec8f56e0de063fa8a9150f8ba501fc_featured_v2.jpg",
@@ -24,10 +24,8 @@ export default function Carousel({hideCarousel}) {
   ];
 
   const [currentInd, setCurrentInd] = useState(0);
-  const [show,setShow] = useState(false)
 
   const increment = () => {
-    setShow(true)
     if (currentInd < imgArr.length - 4) {
       setCurrentInd((prevIndex) => prevIndex + 1);
     }
@@ -37,14 +35,13 @@ export default function Carousel({hideCarousel}) {
     if (currentInd > 0) {
       setCurrentInd((prevIndex) => prevIndex - 1);
     }
-
-    if(currentInd === 0){
-       setShow(false)
-    }
   };
 
   return (
-    <div className={`container container-fluid`} style={{display: hideCarousel ? "block": "none"}}>
+    <div
+      className={`container container-fluid`}
+      style={{ display: hideCarousel ? "block" : "none" }}
+    >
       <div className="row">
         <div style={{ background: "#f8f8f8" }} className="p-4">
           <h3>Collections</h3>
@@ -57,7 +54,7 @@ export default function Carousel({hideCarousel}) {
               <button
                 onClick={decrement}
                 className="rounded rounded-circle"
-                style={{ height: "50px", display : show ? "block":"none" }}
+                style={{ height: "50px" }}
               >
                 <BsChevronLeft />
               </button>
@@ -73,11 +70,17 @@ export default function Carousel({hideCarousel}) {
                     className="rounded rounded-2 object-fit-content"
                     src={imgArr[currentInd + ind]}
                     alt={`photo${currentInd + ind + 1}`}
-                    style={{ width: "100%",minHeight:'320px', height: " 100%" ,boxShadow: "inset 0 0 10px rgba(0, 0, 100, 100)",objectFit:"cover"}}
+                    style={{
+                      width: "100%",
+                      minHeight: "320px",
+                      height: "100%",
+                      boxShadow: "inset 0 0 10px rgba(0, 0, 100, 100)",
+                      objectFit: "cover",
+                    }}
                   />
                   <span
                     className="position-absolute z-4 text-white fw-bold start-0 bottom-0 ms-4"
-                    style={{ left: "0" ,objectFit:"cover"}}
+                    style={{ left: "0" }}
                   >
                     {title[currentInd + ind]}
                   </span>
@@ -87,7 +90,7 @@ export default function Carousel({hideCarousel}) {
             <div className="m-auto">
               <button
                 onClick={increment}
-                className="rounded rounded-circle "
+                className="rounded rounded-circle"
                 style={{ height: "50px" }}
               >
                 <BsChevronRight />
