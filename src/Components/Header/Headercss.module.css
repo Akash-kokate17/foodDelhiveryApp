@@ -1,0 +1,9 @@
+.iconSize{
+    font-size: 30px;
+}
+.headerSticky{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+}

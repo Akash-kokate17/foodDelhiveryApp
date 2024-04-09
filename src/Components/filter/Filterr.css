@@ -1,0 +1,21 @@
+.style{
+    padding: 5px;
+    border-radius: 10px;
+    background: white;
+}
+
+.style:focus{
+ background-color: black; 
+ color:white;  
+}
+
+.sty{
+    padding: 5px;
+    border-radius: 10px;
+    background: white;
+}
+
+.sty:focus{
+ background-color: black; 
+ color:white;  
+}

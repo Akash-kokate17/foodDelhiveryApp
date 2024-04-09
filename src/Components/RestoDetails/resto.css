@@ -1,0 +1,11 @@
+.imgScale{
+    transition: transform 2s;
+    cursor: pointer;
+}
+.img3{
+    transition: transform 2s;
+    cursor: pointer;
+}
+.img3:hover{
+    transform: translateX(20px);
+}
