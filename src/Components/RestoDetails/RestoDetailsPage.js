@@ -49,6 +49,7 @@ export default function RestoDetailsPage(props) {
               src={details.img}
               alt="photo0"
               className="border border-4 rounded rounded-3 imgScale"
+              style={{maxHeight:"457px",maxWidth:"683px"}}
             />
           </div>
           <div className="col-sm-4 container-fluid">
@@ -56,16 +57,19 @@ export default function RestoDetailsPage(props) {
               src={details.img}
               alt="photo1"
               className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3"
+              style={{maxHeight:"152px",maxWidth:"225px"}}
             />
             <img
               src={details.img}
               alt="photo2"
               className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3 "
+              style={{maxHeight:"152px",maxWidth:"225px"}}
             />
             <img
               src={details.img}
               alt="photo3"
               className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3"
+              style={{maxHeight:"152px",maxWidth:"225px"}}
             />
           </div>
           <div className="w-75 d-flex">
