@@ -34,7 +34,7 @@ export default function RestoDetailsPage(props) {
   useEffect(() => {
     fetchDetails();
     // Add id to dependency array to avoid missing dependency warning
-  }, []);
+  });
 
   return (
     <>

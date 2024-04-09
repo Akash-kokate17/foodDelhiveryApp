@@ -69,7 +69,8 @@ export default function Carousel({ hideCarousel }) {
                   <img
                     className="rounded rounded-2 object-fit-content"
                     src={imgArr[currentInd + ind]}
-                    alt={`${currentInd + ind + 1}`}
+                    alt={`PhotoPics ${currentInd + ind + 1}`}
+
                     style={{
                       width: "100%",
                       minHeight: "320px",
