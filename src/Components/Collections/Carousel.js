@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import "./carouselStyle.css"
 
 export default function Carousel({ hideCarousel }) {
   let imgArr = [
@@ -67,13 +68,14 @@ export default function Carousel({ hideCarousel }) {
               >
                 <span>
                   <img
-                    className="rounded rounded-2 object-fit-content"
+                    className="rounded rounded-2 object-fit-content imgWidth"
                     src={imgArr[currentInd + ind]}
                     alt={`PhotoPics ${currentInd + ind + 1}`}
 
                     style={{
                       width: "100%",
-                      minHeight: "320px",
+                       maxWidth: "100%",
+                      minHeight: "300px",
                       height: "100%",
                       boxShadow: "inset 0 0 10px rgba(0, 0, 100, 100)",
                       objectFit: "cover",

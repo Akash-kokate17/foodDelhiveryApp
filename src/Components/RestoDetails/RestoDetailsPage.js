@@ -39,45 +39,24 @@ export default function RestoDetailsPage(props) {
   return (
     <>
       <div className="container w-100 d-flex justify-content-center align-items-center container-fluid">
-        <div className="row w-75">
+        <div className="row d-flex flex-column align-items-center justify-content-center setWithForPhone">
           <span className="text-center">
             <GiJewelCrown style={{ fontSize: "75px" }} />
           </span>
           <h1 className="text-center">{details.name}</h1>
-          <div className="col-sm-8 container-fluid">
+          <div className="col-sm-8 container-fluid flex flex-wrap flex-column align-items-center justify-content-center w-100">
             <img
               src={details.img}
               alt="photo0"
-              className="border border-4 rounded rounded-3 imgScale"
+              className="border border-4 rounded rounded-3 imgScale mainImg"
               style={{maxHeight:"457px",maxWidth:"683px"}}
             />
           </div>
-          <div className="col-sm-4 container-fluid">
-            <img
-              src={details.img}
-              alt="photo1"
-              className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3"
-              style={{maxHeight:"152px",maxWidth:"225px"}}
-            />
-            <img
-              src={details.img}
-              alt="photo2"
-              className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3 "
-              style={{maxHeight:"152px",maxWidth:"225px"}}
-            />
-            <img
-              src={details.img}
-              alt="photo3"
-              className="border border-4 rounded rounded-circle w-75 ms-5 object-fit-cover img3"
-              style={{maxHeight:"152px",maxWidth:"225px"}}
-            />
-          </div>
-          <div className="w-75 d-flex">
-            <div>
+         
+          <div className="w-100 infoSection">
+            <div className="flex">
               <p className="text-start">{details.cuisines}</p>
-            </div>
-            <div className="w-100">
-              <p className="text-end me-5 mt-1">
+              <span className="me-5">
                 <span
                   className="border border-1 p-1 mt-1 rounded-2"
                   style={{
@@ -90,7 +69,10 @@ export default function RestoDetailsPage(props) {
                   {details.rating}
                   <span className="bi bi-star-fill"></span>
                 </span>
-              </p>
+              </span>
+            </div>
+            <div className="w-100">
+              
             </div>
           </div>
           <div>
@@ -124,7 +106,9 @@ export default function RestoDetailsPage(props) {
           </div>
         </div>
       </div>
-      <Footer />
+     <div className="hideFooter">
+     <Footer />
+     </div>
     </>
   );
 }

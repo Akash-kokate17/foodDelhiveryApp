@@ -1,11 +1,51 @@
-.imgScale{
-    transition: transform 2s;
-    cursor: pointer;
-}
-.img3{
-    transition: transform 2s;
-    cursor: pointer;
-}
-.img3:hover{
-    transform: translateX(20px);
-}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Styles for phone-sized screens */
+  @media (max-width: 767px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .smallScreen {
+      display: none;
+    }
+  
+    .mainImg {
+      width: 100%; /* Adjust to fill the container */
+      max-width: none; /* Remove max-width */
+    }
+  
+    .hideFooter {
+      display: none;
+    }
+  
+    .setWithForPhone {
+      width: 100%;
+    }
+  }
+  
+  /* Styles for larger screens (laptops/desktops) */
+  @media (min-width: 768px) {
+    .infoSection {
+      width: 75%;
+    }
+  
+    .mainImg {
+      width: auto; /* Reset width to auto for larger screens */
+      max-width: 100%; /* Ensure image does not exceed container width */
+      height: auto; /* Maintain aspect ratio */
+      max-height: 457px; /* Limit maximum height */
+    }
+  }
+      
