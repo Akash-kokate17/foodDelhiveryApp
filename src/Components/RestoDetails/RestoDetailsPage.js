@@ -48,8 +48,8 @@ export default function RestoDetailsPage(props) {
             <img
               src={details.img}
               alt="photo0"
-              className="border border-4 rounded rounded-3 imgScale mainImg"
-              style={{maxHeight:"457px",maxWidth:"683px"}}
+              className="border border-4 rounded rounded-3 imgScale mainImg img-fluid"
+              style={{height:"457px",width:"683px"}}
             />
           </div>
          
